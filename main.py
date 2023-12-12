@@ -6,12 +6,12 @@ def main():
     #     print('Error: Nombre de paramètres incorrect !')
     #     return
 
-    firstColor = input('Couleur en commun ? ')
-    secondColor = input('Couleur secrète ? ')
+    firstColor = input('Couleur en commun ? ').split(',')
+    secondColor = input('Couleur secrète ? ').split(',')
 
     printColors(crypt(firstColor, secondColor))
 
-    transportedColor = input('Couleur de votre correspondant ? ')
+    transportedColor = input('Couleur de votre correspondant ? ').split(',')
 
     printColors(decrypt(firstColor, transportedColor))
 
@@ -31,11 +31,13 @@ def decrypt(transported_color, secret_color):
 
     return [round(red), round(green), round(blue)]
 
+
 def printColors(text):
     print('-' * 30)
     print('Couleur:')
     print(text)
     print()
     print('-' * 30)
+
 
 main()
