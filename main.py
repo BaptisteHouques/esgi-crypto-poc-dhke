@@ -2,22 +2,18 @@ import sys
 
 
 def main():
-    if len(sys.argv) != 4:
-        print('Error: Nombre de paramètres incorrect !')
-        return
+    # if len(sys.argv) != 4:
+    #     print('Error: Nombre de paramètres incorrect !')
+    #     return
 
-    firstColor = sys.argv[2].split(',')
-    secondColor = sys.argv[3].split(',')
+    firstColor = input('Couleur en commun ? ')
+    secondColor = input('Couleur secrète ? ')
 
-    if sys.argv[1] == '--crypt' or sys.argv[1] == '-c':
-        print(crypt(firstColor, secondColor))
-    elif sys.argv[1] == '--decrypt' or sys.argv[1] == '-d':
-        print(decrypt(firstColor, secondColor))
-    else:
-        print('Error')
-        return
+    printColors(crypt(firstColor, secondColor))
 
-    decrypt(firstColor, secondColor)
+    transportedColor = input('Couleur de votre correspondant ? ')
+
+    printColors(decrypt(firstColor, transportedColor))
 
 
 def crypt(common_color, secret_color):
@@ -35,5 +31,11 @@ def decrypt(transported_color, secret_color):
 
     return [round(red), round(green), round(blue)]
 
+def printColors(text):
+    print('-' * 30)
+    print('Couleur:')
+    print(text)
+    print()
+    print('-' * 30)
 
 main()
