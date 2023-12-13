@@ -13,7 +13,7 @@ def main():
 
     transportedColor = input('Couleur de votre correspondant ? ').split(',')
 
-    printColors(secondMix(transportedColor, secondColor))
+    printColors(secondMix(transportedColor, firstColor))
 
 
 def firstMix(common_color, secret_color):
