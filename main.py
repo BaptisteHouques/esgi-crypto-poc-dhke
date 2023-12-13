@@ -8,6 +8,8 @@ def main():
 
     firstColor = input('Couleur en commun ? ').split(',')
     secondColor = input('Couleur secrète ? ').split(',')
+    print(firstColor)
+    print(secondColor)
 
     printColors(firstMix(firstColor, secondColor))
 
@@ -38,6 +40,5 @@ def printColors(text):
     print(text)
     print()
     print('-' * 30)
-
 
 main()
